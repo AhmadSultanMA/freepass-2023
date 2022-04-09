@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bab;
+use App\Models\Materi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
@@ -18,9 +19,10 @@ class BabController extends Controller
             ]);
         }else{
             foreach ($data as $item){
+                $datas = $item->materi->orderBy('created_at', 'asc')->get();
                 $res[] = [
                     'bab' => $item,
-                    'materi' => $item->materi->orderBy('created_at', 'asc'),
+                    'materi' => $datas,
                 ];           
             }
             
