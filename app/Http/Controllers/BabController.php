@@ -20,7 +20,7 @@ class BabController extends Controller
             foreach ($data as $item){
                 $res[] = [
                     'bab' => $item,
-                    'materi' => $item->materi,
+                    'materi' => $item->materi->orderBy('created_at', 'asc'),
                 ];           
             }
             
