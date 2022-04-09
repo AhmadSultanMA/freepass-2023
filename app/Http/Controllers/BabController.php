@@ -19,7 +19,7 @@ class BabController extends Controller
             ]);
         }else{
             foreach ($data as $item){
-                $datas = $item->materi->orderBy('created_at', 'asc')->get();
+                $datas = $item->materi->orderBy('created_at', 'asc');
                 $res[] = [
                     'bab' => $item,
                     'materi' => $datas,
