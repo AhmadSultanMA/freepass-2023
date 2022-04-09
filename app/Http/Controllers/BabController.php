@@ -11,7 +11,7 @@ class BabController extends Controller
 {
     public function showBab($idKursus)
     {
-        $data = Bab::where('kursus_id',$idKursus)->get();
+        $data = Bab::where('kursus_id',$idKursus)->orderBy('created_at', 'asc')->get()->get();
         if(count($data)===0){
             return response()->json([
                'data' => [],
