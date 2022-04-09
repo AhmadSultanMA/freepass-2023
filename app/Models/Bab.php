@@ -17,7 +17,7 @@ class Bab extends Model
 
     public function materi()
     {
-        return $this->hasMany(Materi::class);
+        return $this->hasMany(Materi::class)->orderBy('created_at','asc');
     }
 
     public function kursus()
