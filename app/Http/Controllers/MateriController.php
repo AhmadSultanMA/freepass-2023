@@ -11,12 +11,11 @@ class MateriController extends Controller
 {
     public function showMateri($idKursus,$idBab)
     {
-        $data = Materi::where('kursus_id',$idKursus)->where('bab_id',$idBab)->get();
-        $terbaru = $data::orderBy('created_at', 'desc')->get();
+        $data = Materi::where('kursus_id',$idKursus)->where('bab_id',$idBab)->orderBy('created_at', 'desc')->get();
         
         return response()->json([
             'status' => 'berhasil',
-            'data' => $terbaru,
+            'data' => $data,
         ]);
     }
 
