@@ -14,10 +14,23 @@ class KursusController extends Controller
     {
         $data = Kursus::get();
         
-        return response()->json([
-            'status' => 'berhasil',
-            'data' => $data,
-        ]);
+        if(count($data)===0){
+            return response()->json([
+               'data' => [],
+            ]);
+        }else{
+            foreach ($data as $item){
+                $res[] = [
+                    'kursus' => $item,
+                    'materi' => $item->materi,
+                ];           
+            }
+            
+            return response()->json([
+                'status' => 'berhasil',
+                'data' =>$res
+            ]);
+        }
     }
 
     public function saveKursus(Request $request)

@@ -23,4 +23,9 @@ class Materi extends Model
         return $this->belongsTo(Bab::class, 'bab_id');
     }
 
+    public function kursus()
+    {
+        return $this->belongsTo(Kursus::class, 'kursus_id');
+    }
+
 }

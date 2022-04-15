@@ -15,6 +15,11 @@ class Kursus extends Model
         return $this->hasMany(Bab::class);
     }
 
+    public function materi()
+    {
+        return $this->hasMany(Materi::class);
+    }
+
     public function kursusAcc()
     {
         return $this->hasMany(kursusAcc::class);
