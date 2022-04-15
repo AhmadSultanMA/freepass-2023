@@ -230,17 +230,15 @@ class AuthController extends Controller
                     'message' => 'Password salah',
                 ],401);
             }
-                $user->password = $request->new_password;
-                $user->save();
 
-                if($user->save()){
+                $user->update([
+                    'password' => bcrypt($request->new_password)
+                ]);
 
                 return response()->json([
                     'status' => 'Success',
                     'message' => 'Berhasil ganti password',
                 ],200);
-            }
-            
         }
     }
 
