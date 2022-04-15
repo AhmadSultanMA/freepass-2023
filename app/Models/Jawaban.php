@@ -23,6 +23,7 @@ class Jawaban extends Model
 
     public function kursus()
     {
-        return $this->belongsTo(Kursus::class,'kursus_id')->where('email',auth()->user()->email);
+        $email = Auth::user()->email;
+        return $this->belongsTo(Kursus::class,'kursus_id')->where('email',$email);
     }
 }
