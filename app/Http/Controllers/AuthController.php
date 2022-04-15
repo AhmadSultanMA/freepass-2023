@@ -233,10 +233,13 @@ class AuthController extends Controller
                 $user->password = $request->new_password;
                 $user->save();
 
+                if($user->save()){
+
                 return response()->json([
                     'status' => 'Success',
                     'message' => 'Berhasil ganti password',
                 ],200);
+            }
             
         }
     }
