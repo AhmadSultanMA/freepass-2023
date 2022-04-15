@@ -20,6 +20,11 @@ class Kursus extends Model
         return $this->hasMany(Materi::class);
     }
 
+    public function jawaban()
+    {
+        return $this->hasMany(Jawaban::class);
+    }
+
     public function kursusAcc()
     {
         return $this->hasMany(kursusAcc::class);

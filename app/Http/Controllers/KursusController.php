@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kursus;
+use App\Models\Jawaban;
 use App\Http\Controllers\CloudinaryStorage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -23,6 +24,7 @@ class KursusController extends Controller
                 $res[] = [
                     'kursus' => $item,
                     'materi' => $item->materi,
+                    'jawaban' => $item->jawaban,
                 ];           
             }
             

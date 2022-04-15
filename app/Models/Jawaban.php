@@ -8,5 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Jawaban extends Model
 {
     protected $table = "jawaban";
+
+    protected $fillable = [
+        'kursus_id',
+        'bab_id',
+        'materi_id',
+        'komen',
+        'nilai',
+        'gambar',
+        'email',
+        'namauser',
+    ];
     use HasFactory;
+
+    public function kursus()
+    {
+        return $this->belongsTo(Kursus::class,'kursus_id')->where('email',auth()->user()->email);
+    }
 }
