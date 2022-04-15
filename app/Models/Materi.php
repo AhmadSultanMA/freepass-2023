@@ -25,7 +25,7 @@ class Materi extends Model
 
     public function kursus()
     {
-        return $this->belongsTo(Kursus::class, 'kursus_id')->where('tipe', 2);
+        return $this->belongsTo(Kursus::class, 'kursus_id')->where('tipe','=', 2);
     }
 
 }
