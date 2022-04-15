@@ -229,7 +229,7 @@ class AuthController extends Controller
                 return response()->json([
                     'message' => 'Password salah',
                 ],401);
-            }else{
+            }
                 $user->password = $request->new_password;
                 $user->save();
 
@@ -237,7 +237,7 @@ class AuthController extends Controller
                     'status' => 'Success',
                     'message' => 'Berhasil ganti password',
                 ],200);
-            }
+            
         }
     }
 
