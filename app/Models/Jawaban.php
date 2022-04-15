@@ -24,6 +24,6 @@ class Jawaban extends Model
     public function kursus()
     {
         $email = Auth::user()->email;
-        return $this->belongsTo(Kursus::class,'kursus_id')->where('email',$email);
+        return $this->belongsTo(Kursus::class,'kursus_id')->where('email', '=' ,$email);
     }
 }
