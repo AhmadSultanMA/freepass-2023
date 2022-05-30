@@ -20,10 +20,4 @@ class Jawaban extends Model
         'namauser',
     ];
     use HasFactory;
-
-    public function kursus()
-    {
-        $email = Auth::user()->email;
-        return $this->belongsTo(Kursus::class,'kursus_id')->where('email', '=' ,$email);
-    }
 }

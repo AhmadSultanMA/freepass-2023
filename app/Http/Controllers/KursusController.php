@@ -24,7 +24,6 @@ class KursusController extends Controller
                 $res[] = [
                     'kursus' => $item,
                     'materi' => $item->materi,
-                    'jawaban' => $item->jawaban,
                 ];           
             }
             
