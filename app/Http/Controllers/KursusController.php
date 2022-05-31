@@ -22,13 +22,13 @@ class KursusController extends Controller
         }else{
             foreach ($data as $item){
                 $res[] = [
-                    $item,
                     'materi' => $item->materi,
                 ];           
             }
             
             return response()->json([
                 'status' => 'berhasil',
+                $data,
                 'data' =>$res
             ]);
         }
