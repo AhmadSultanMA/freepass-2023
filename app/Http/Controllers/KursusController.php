@@ -22,7 +22,7 @@ class KursusController extends Controller
         }else{
             foreach ($data as $item){
                 $res[] = [
-                    'kursus' => $item,
+                    $item,
                     'materi' => $item->materi,
                 ];           
             }
