@@ -29,7 +29,6 @@ class KursusController extends Controller
             return response()->json([
                 'status' => 'berhasil',
                 'data'=>$data,
-                $res,
             ]);
         }
     }
