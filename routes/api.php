@@ -43,6 +43,7 @@ Route::post('/deleteAccess/{idUser}/{idKursus}',[AuthController::class, 'deleteA
 
 // Kursus
 Route::get('/kursus',[KursusController::class, 'showKursus']);
+Route::get('/userkursus/{idKursus}',[AuthController::class, 'userKursus']);
 Route::post('/updateKursus', [KursusController::class, 'updateKursus']);
 Route::post('/saveKursus', [KursusController::class, 'saveKursus']);
 Route::post('/deleteKursus/{id}',[KursusController::class, 'deleteKursus']);

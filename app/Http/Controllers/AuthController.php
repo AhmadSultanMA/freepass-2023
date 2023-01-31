@@ -25,6 +25,19 @@ class AuthController extends Controller
         
     }
 
+    public function userKursus($idKursus)
+    {
+        $kursusAcc = KursusAcc::get();
+            
+        foreach ($kursusAcc as $item){
+            if($item->kursus_id == $idKursus){
+                $res[] = [
+                    'user' => $data = User::where('id',$item->user_id)->get(),    
+                ];
+            }
+        }
+    }
+
     public function userAccess(Request $request)
     {
         $user = User::where('email',$request->email)->first();
